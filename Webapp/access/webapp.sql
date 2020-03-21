@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 11-03-2020 a las 15:23:30
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.1
+-- Servidor: localhost
+-- Tiempo de generación: 26-02-2020 a las 16:59:12
+-- Versión del servidor: 10.3.15-MariaDB
+-- Versión de PHP: 7.1.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,30 +25,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `carreras`
+-- Estructura de tabla para la tabla `Carreras`
 --
 
-CREATE TABLE `carreras` (
+CREATE TABLE `Carreras` (
   `Id_Carrera` int(11) NOT NULL,
   `Nombre` varchar(50) NOT NULL,
   `Codigo` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `carreras`
+-- Volcado de datos para la tabla `Carreras`
 --
 
-INSERT INTO `carreras` (`Id_Carrera`, `Nombre`, `Codigo`) VALUES
+INSERT INTO `Carreras` (`Id_Carrera`, `Nombre`, `Codigo`) VALUES
 (1, 'Informatica', 'INFO08'),
 (2, 'Contabilidad', 'HOSP-08');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `productos`
+-- Estructura de tabla para la tabla `Productos`
 --
 
-CREATE TABLE `productos` (
+CREATE TABLE `Productos` (
   `Id_Producto` int(11) NOT NULL,
   `Nombre` varchar(55) COLLATE utf8_spanish_ci NOT NULL,
   `Descripcion` text COLLATE utf8_spanish_ci NOT NULL,
@@ -58,24 +58,21 @@ CREATE TABLE `productos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `productos`
+-- Volcado de datos para la tabla `Productos`
 --
 
-INSERT INTO `productos` (`Id_Producto`, `Nombre`, `Descripcion`, `Precio`, `Id_categoria`, `Imagen`) VALUES
+INSERT INTO `Productos` (`Id_Producto`, `Nombre`, `Descripcion`, `Precio`, `Id_categoria`, `Imagen`) VALUES
 (1, 'Programacion Basica', 'Curso en donde aprenderas conceptos basicos , tecnicas y lenguajes de programacion.', 1500, 1, 'product1.png'),
 (2, 'Diseño web ', 'Curso en donde aprenderas a maquetar , diseñar e  implementar un siti web ', 2500, 2, 'product2.png'),
-(5, 'Cafe', 'que rico cafe', 123, 4, 'product3.png'),
-(8, 'Pelicula', 'Serie anime de los caballeros del zodiaco', 800, 5, 'img1.jpg'),
-(9, 'Milo de Escorpion', 'mejor signo del mundo mundial', 5000, 5, 'img2.jpg'),
-(10, '607', 'No puedo creer que no sepan programar', 15, 1, 'img1.jpg');
+(5, 'Cafe', 'que rico cafe', 123, 4, 'product3.png');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tipo_usuario`
+-- Estructura de tabla para la tabla `Tipo_Usuario`
 --
 
-CREATE TABLE `tipo_usuario` (
+CREATE TABLE `Tipo_Usuario` (
   `Id_Tipo` int(11) NOT NULL,
   `Nombre` varchar(50) NOT NULL,
   `Descripcion` text NOT NULL,
@@ -83,20 +80,20 @@ CREATE TABLE `tipo_usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `tipo_usuario`
+-- Volcado de datos para la tabla `Tipo_Usuario`
 --
 
-INSERT INTO `tipo_usuario` (`Id_Tipo`, `Nombre`, `Descripcion`, `Nivel`) VALUES
+INSERT INTO `Tipo_Usuario` (`Id_Tipo`, `Nombre`, `Descripcion`, `Nivel`) VALUES
 (1, 'Cliente', 'Este Usuario realiza las compras dentro de aplicacion, visulaiza su perfil y su historial de compras', 1),
 (2, 'Sistemas', 'Este Usuario puede configurar , modificar y restructurar la aplicacion desde el backend ó desde el codido', 0);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Estructura de tabla para la tabla `Usuarios`
 --
 
-CREATE TABLE `usuarios` (
+CREATE TABLE `Usuarios` (
   `Id_Usuario` int(11) NOT NULL,
   `Nombre` varchar(150) NOT NULL,
   `ApallidoP` varchar(150) NOT NULL,
@@ -107,43 +104,42 @@ CREATE TABLE `usuarios` (
   `Telefono` varchar(15) NOT NULL,
   `TUsuario` int(11) NOT NULL,
   `Nusuario` varchar(50) NOT NULL,
-  `Password` varchar(55) NOT NULL
+  `Password` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Volcado de datos para la tabla `Usuarios`
 --
 
-INSERT INTO `usuarios` (`Id_Usuario`, `Nombre`, `ApallidoP`, `ApellidoM`, `Email`, `Id_Carrera`, `Matricula`, `Telefono`, `TUsuario`, `Nusuario`, `Password`) VALUES
-(1, 'Jose Luis', 'Chavez', 'Gomez', 'joseluis@iscjlchavezg.mx', 1, '1280233', '11069054', 2, 'JlchavezG', '827ccb0eea8a706c4c34a16891f84e7b'),
-(2, 'Invitado', 'Prueba', 'de usuario', 'prueba@prueba.com', 1, '15151587', '4567890', 1, 'invitado', '827ccb0eea8a706c4c34a16891f84e7b');
+INSERT INTO `Usuarios` (`Id_Usuario`, `Nombre`, `ApallidoP`, `ApellidoM`, `Email`, `Id_Carrera`, `Matricula`, `Telefono`, `TUsuario`, `Nusuario`, `Password`) VALUES
+(1, 'Jose Luis', 'Chavez', 'Gomez', 'joseluis@iscjlchavezg.mx', 1, '1280233', '11069054', 2, 'JlchavezG', '12345');
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `carreras`
+-- Indices de la tabla `Carreras`
 --
-ALTER TABLE `carreras`
+ALTER TABLE `Carreras`
   ADD PRIMARY KEY (`Id_Carrera`);
 
 --
--- Indices de la tabla `productos`
+-- Indices de la tabla `Productos`
 --
-ALTER TABLE `productos`
+ALTER TABLE `Productos`
   ADD PRIMARY KEY (`Id_Producto`);
 
 --
--- Indices de la tabla `tipo_usuario`
+-- Indices de la tabla `Tipo_Usuario`
 --
-ALTER TABLE `tipo_usuario`
+ALTER TABLE `Tipo_Usuario`
   ADD PRIMARY KEY (`Id_Tipo`);
 
 --
--- Indices de la tabla `usuarios`
+-- Indices de la tabla `Usuarios`
 --
-ALTER TABLE `usuarios`
+ALTER TABLE `Usuarios`
   ADD PRIMARY KEY (`Id_Usuario`);
 
 --
@@ -151,28 +147,28 @@ ALTER TABLE `usuarios`
 --
 
 --
--- AUTO_INCREMENT de la tabla `carreras`
+-- AUTO_INCREMENT de la tabla `Carreras`
 --
-ALTER TABLE `carreras`
+ALTER TABLE `Carreras`
   MODIFY `Id_Carrera` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `productos`
+-- AUTO_INCREMENT de la tabla `Productos`
 --
-ALTER TABLE `productos`
-  MODIFY `Id_Producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+ALTER TABLE `Productos`
+  MODIFY `Id_Producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de la tabla `tipo_usuario`
+-- AUTO_INCREMENT de la tabla `Tipo_Usuario`
 --
-ALTER TABLE `tipo_usuario`
+ALTER TABLE `Tipo_Usuario`
   MODIFY `Id_Tipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `usuarios`
+-- AUTO_INCREMENT de la tabla `Usuarios`
 --
-ALTER TABLE `usuarios`
-  MODIFY `Id_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `Usuarios`
+  MODIFY `Id_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

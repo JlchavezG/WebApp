@@ -1,0 +1,91 @@
+
+input[type=text]  {
+  background: transparent;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 2px solid #2b85cd;
+  color: #2b85cd;
+  border-radius: 0px;
+}
+input[type=text]:focus{
+  border-bottom: 2px solid #4bad68;
+  transition: 1s;
+  outline:none !important;
+  outline-width: 0 !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+input[type=password]{
+  background: transparent;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 2px solid #2b85cd;
+  color: #2b85cd;
+  border-radius: 0px;
+}
+input[type=password]:focus{
+  border-bottom: 2px solid #4bad68;
+  transition: 1s;
+  outline:none !important;
+  outline-width: 0 !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+input[type=tel]{
+  background: transparent;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 2px solid #2b85cd;
+  color: #2b85cd;
+  border-radius: 0px;
+}
+input[type=tel]:focus{
+  border-bottom: 2px solid #4bad68;
+  transition: 1s;
+  outline:none !important;
+  outline-width: 0 !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+input[type=email]{
+  background: transparent;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 2px solid #2b85cd;
+  color: #2b85cd;
+  border-radius: 0px;
+}
+input[type=email]:focus{
+  border-bottom: 2px solid #4bad68;
+  transition: 1s;
+  outline:none !important;
+  outline-width: 0 !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+.select-css{
+  background: transparent;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 2px solid #2b85cd;
+  color: #2b85cd;
+  border-radius: 0px;
+}
+.select-css:focus{
+  border-bottom: 2px solid #4bad68;
+  transition: 1s;
+  outline:none !important;
+  outline-width: 0 !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
