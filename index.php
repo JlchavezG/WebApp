@@ -80,7 +80,7 @@ $alerta.="<div class='alert alert-success alert-dismissible fade show' role='ale
     <link rel="stylesheet" href="css/pace.css">
   </head>
   <body>
-    <div class="container py-5">
+    <div class="container py-5"><br><br>
          <div class="row">
                <div class="col-md-12">
                    <?php echo $alerta; ?>
