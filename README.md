@@ -1,2 +1,2 @@
-# WebApp
-Proyecto educativo en el cual se muestra como realizar una web progresiva utilizando elementos como: framworks, cdn, apis , web servise, conexion a base de datos con mysql y php.
+# Webapp
+Proyecto educativo en el cual se les enseñara a los alumnos a realizar una plataforma web con servicios y apis de internet
