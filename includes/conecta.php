@@ -10,7 +10,7 @@
  }
  else {
    $mensaje.="<div class='alert alert-success alert-dismissible fade show' role='alert'>
-          <strong>Genial!</strong> La conexión a la BD de datos de la webApp es correcta.
+          <strong>Genial!</strong> Bienvenido a nuestra aplicación online IscjlchavezG.
           <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
            <span aria-hidden='true'>&times;</span>
           </button>

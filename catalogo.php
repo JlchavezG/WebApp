@@ -1,6 +1,9 @@
 <?php
    session_start();
    include 'includes/conecta.php';
+   include 'includes/config.php';
+   // incluimos el archivo carrito php
+   include 'includes/carrito.php';
    $usuario = $_SESSION['Usuario'];
    if (!isset($usuario)) {
      header("location:index.php");
@@ -17,91 +20,36 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/fontello.css">
+    <link rel="stylesheet" href="css/pace.css">
     <title>Inicio del Sistema</title>
   </head>
   <body>
-    <!-- iniciamos la barra de navegacion -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark lighten-1 navbar-static-top">
-      <a class="navbar-brand" href="#">IscjlchavezG</a>
-       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-         aria-expanded="false" aria-laber="Toggle navigation">
-         <span class="navbar-toggler-icon"></span>
-       </button>
-       <div class="callapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                  <a class="nav-link" href="#"><span class="icon-home"> Inicio</span></a>
-                  <span class="sr-only">(current)</span>
-              </li>
-              <li class="nav-item active">
-                  <a class="nav-link" href="#"><span class="icon-attention-circled"> Acerca de</span></a>
-              </li>
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="icon-coffee"> Productos</span>
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#"><span class="icon-beer"> Bebidas</span></a>
-                      <a class="dropdown-item" href="#"><span class="icon-food"> Comida</span></a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#"><span class="icon-truck"> Más Productos</span></a>
-                  </div>
-              </li>
-              <li class="nav-item active">
-                 <a class="nav-link" href="#"><span class="icon-cog"> Soporte Tecnico</span></a>
-              </li>
-          </ul>
-          <ul class="navbar-nav ml-auto nav-flex-icons">
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="icon-user-1"></span><?php echo $_SESSION['Usuario'];?>
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                     <a class="dropdown-item" href="#"><span class="icon-gauge"> Perfil</span></a>
-                     <a class="dropdown-item" href="#"><span class="icon-wrench"> Configuracion</span></a>
-                       <div class="dropdown-divider"></div>
-                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#ModalCenter"><span class="icon-off"> Cerrar Sesion</span></a>
-                       </div>
-              </li>
-              <li class="nav-item active">
-                 <a class="nav-link" href="#"><span class="icon-cubes"> Version 1.1</span></a>
-              </li>
-              <li class="nav-item active">
-                 <a class="nav-link" href="#">+<span class="icon-basket"></span></a>
-              </li>
-              <li class="nav-link" href="#"><span class="icon-facebook"></span></li>
-              <li class="nav-link" href="#"><span class="icon-twitter-1"></span></li>
-              <li class="nav-link" href="#"><span class="icon-github"></span></li>
-          </ul>
-       </div>
-    </nav>
-    <!-- termina la barra de navegación -->
+    <!-- incluir barra de navegacion -->
+    <?php include 'includes/navbar.php'; ?>
     <!-- alerta de coneccion -->
      <?php  echo $mensaje;?>
     <!-- termina alerta de conexion -->
     <!-- ventana modal cerrar sesion -->
-    <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="ModalCenterTitle">Cerrar Sesión</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                       <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            <div class="modal-body">¿Deceas cerrar tu sesion actual? <?php echo $_SESSION['Usuario'];?></div>
-           <div class="modal-footer">
-                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                 <a href="includes/csession.php" class="btn btn-danger"><span class="icon-off"> Cerrar Sesión</span></a>
-           </div>
-        </div>
-    </div>
-    </div>
-  <!-- termina ventana modal -->
+    <?php include 'includes/modalcerrar.php';?>
+    <!-- alerta de agregar producto toas -->
 <section>
 <!-- inicia tarjetas 1 --><br>
 <div class="container">
+  <!-- validación para mostrar el mensaje uando no este vacio -->
+  <!-- alerta de accion de producto ya seleccionado -->
+  <?php echo $accion; ?>
+  <?php if($alerta!= ""){ ?>
+  <div class="alert alert-success">
+    <!-- cambiamos la variable de alerta contenida en carrito.php -->
+    <?php echo $alerta; ?>
+     <a href="carrito.php" class="badge badge-success"><span class="icon-basket-3"></span> Ver Carrito</a>
+  </div>
+  <?php } ?>
+  <div class="col-lg-12 col-md-12 col-sm-12">
+    <h4>Todas las Categorias de Producto:</h4>
+  </div>
   <div class="row">
+    <!-- ciclo para extrar los productos -->
     <?php while($row = $ejecuta->fetch_assoc()){ ?>
     <div class="card mb-3" style="max-width: 540px;">
        <div class="row no-gutters">
@@ -113,17 +61,37 @@
               <h5 class="card-title"><?php echo $row['Nombre'];?></h5>
               <p class="card-text">Descripcion: <?php echo $row['Descripcion'];?></p>
               <p class="card-text"><small class="text-muted">Precio: <?php echo $row['Precio'];?></small></p>
-              <button type="button" name="btn_carrito" class="btn btn-success">Mandar a <span class="icon-basket"></span></button>
+               <div class="col-lg-12">
+                 <!-- colocar el formulario en hidden -->
+                 <form name="piezas" action="" method="post">
+                   <input type="hidden" name="id" value="<?php echo openssl_encrypt($row['Id_Producto'],COD,KEY)?>">
+                   <input type="hidden" name="nombre" value="<?php echo openssl_encrypt($row['Nombre'],COD,KEY)?>">
+                   <input type="hidden" name="precio" value="<?php echo openssl_encrypt($row['Precio'],COD,KEY)?>">
+                   <input type="hidden" name="numero" value="<?php echo openssl_encrypt(1,COD,KEY)?>">
+                   <div align="right">
+                       <button type="submit" name="btn_carrito" value="Agregar" class="btn btn-success"><span class="icon-basket"></span> Agregar al carrito</button>
+                   </div>
+                 </form>
+               </div>
             </div>
           </div>
     </div>
   </div>
     <?php } ?>
+    <!-- termina el ciclo para extraer los productos -->
  </div>
 </div>
 <!-- termina tarjetas -->
 </section>
+<!-- comienza nustra paginación -->
+<?php include 'includes/footer.php'; ?>
+<script>
+  $(document).ready(function(){
+       $('.toast').toast('show')
+  });
+</script>
     <script src="js/jquery3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/pace.min.js"></script>
   </body>
 </html>

@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
                <span aria-hidden='true'>&times;</span>
                </button>
               </div>";
-  }
+}
 else {
 $Nombre = $conecta->real_escape_string($_POST['nombre']);
 $ApellidoP = $conecta->real_escape_string($_POST['apellidop']);
@@ -66,7 +66,6 @@ $alerta.="<div class='alert alert-success alert-dismissible fade show' role='ale
 }
 }
 }
-
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

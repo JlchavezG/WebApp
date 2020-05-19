@@ -17,12 +17,12 @@
             if ($usuario == $userok && $password == $passwordok) {
                 $_SESSION['loguin']= TRUE;
                 $_SESSION['Usuario'] = $usuario;
-                header("location:../catalogo.php");
-              }
-       else {
+                header("location:../catalogo.php");}
+                else {
                header("location:../index.php");
               }
-     } else {
+                } else {
       header("location:../index.php");
     }
+    
  ?>
