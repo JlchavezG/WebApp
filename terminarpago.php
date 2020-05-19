@@ -23,8 +23,6 @@
     $email = $conecta->real_escape_string($_POST['correo']);
     $total = $conecta->real_escape_string($_POST['total']);
     $estadoC = $conecta->real_escape_string($_POST['estatus']);
-
-
     // verificar que el id de pago no se repita
     $Pagonuevo = "SELECT * FROM Ventas WHERE Token = '$token'";
     $nuevo = $conecta->query($Pagonuevo);
@@ -36,6 +34,7 @@
         </button>
         </div>";
     }
+    // insertar en bd la veta 
     else {
     $registro = "INSERT INTO Ventas(ClaveVenta,Token,Fecha,Usuario,Correo,Total,Estatus)VALUES('$llave','$token','$fecha','$cliente','$email','$total','$estadoC')";
     $inserta = $conecta->query($registro);
