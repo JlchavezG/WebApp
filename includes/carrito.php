@@ -30,7 +30,7 @@
            }
            if(is_numeric(openssl_decrypt($_POST['numero'],COD,KEY))) {
              $cantidad = openssl_decrypt($_POST['numero'],COD,KEY);
-             $alerta.= "Ok ID correcto ".$cantidad;
+             $alerta.= "Ok cantidad correcto ".$cantidad;
            }
            else{
              $alerta.= "La cantidad seleccionada en el producto no es correcta"; break;
@@ -63,7 +63,7 @@
                'NOMBRE'=>$nom,
                'CANTIDAD'=>$cantidad,
                'PRECIO'=>$precio
-               );
+             );
                $_SESSION['Carrito'][$MasProductos]= $productos;
                $alerta = "Producto Agregado al carrito";
            }

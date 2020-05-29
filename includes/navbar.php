@@ -37,7 +37,7 @@
                   </div>
               </li>
               <li class="nav-item active">
-                 <a class="nav-link" href="#"><span class="icon-cog"> Soporte Tecnico</span></a>
+                 <a class="nav-link" href="#"><span class="icon-cog"> Soporte tecnico</span></a>
               </li>
           </ul>
           <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -53,13 +53,16 @@
                        </div>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="carrito.php"><span class="icon-shopping-bag"> Compras(<?php
+                <a class="nav-link" href="carrito.php"><span class="icon-shopping-bag"> Compras </span><span class="badge badge-danger badge-pill"><?php
                     echo(empty($_SESSION['Carrito']))?0:count($_SESSION['Carrito']);
 
-                 ?>)</span></a>
+                 ?></span></a>
               </li>
               <li class="nav-item active">
-                 <a class="nav-link" href="#"><span class="icon-cubes"> Version 1.1</span></a>
+                <a class="nav-link" href="whatsapp:://send?text=Comparte%20este%20contenido%20en%20whatsapp%20con%20tus%20amigos%20y%20familiares%20https:/grupoda.mx">whatsapp<span class="icon-chat"></span></a>
+              </li>
+              <li class="nav-item active">
+                 <a class="nav-link" href="#"><span class="icon-cubes"> Version 2.3</span></a>
               </li>
           </ul>
        </div>

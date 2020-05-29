@@ -57,7 +57,7 @@
               <li class="list-group-item"><span class="icon-calendar-empty"></span> Fecha: <?php echo $fechaF; ?></li>
               <li class="list-group-item"><span class="icon-bell-1"></span> Email de Notificación: <?php echo $Correo; ?></li>
               <li class="list-group-item"><span class="icon-pencil-neg"></span> Estatus: <?php echo $estatus; ?></li>
-              <li class="list-group-item"><?php echo "<h3> Total: ".$total." MNX</h3>";?></li>
+              <li class="list-group-item"><?php echo "<h3> Total: ".number_format($total,2)." MNX</h3>";?></li>
           </ul>
           <div class="row">
                 <div class="col">
