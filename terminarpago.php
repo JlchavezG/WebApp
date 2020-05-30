@@ -23,7 +23,10 @@
     $email = $conecta->real_escape_string($_POST['correo']);
     $total = $conecta->real_escape_string($_POST['total']);
     $estadoC = $conecta->real_escape_string($_POST['estatus']);
-
+    // consulta para descargar qr
+   $codigo = "SELECT * FROM Ventas";
+   $r = $conecta->query($codigo);
+   $linea = $r->num_rows;
     // Generar codigo Qr
     require 'phpqrcode/qrlib.php';
     //declaramos la carpeta a contener los codigos
@@ -32,7 +35,7 @@
     if (!file_exists($dir))
       mkdir($dir);
     //ruta y nombre del archivo a generar
-    $filename = $dir.$token;
+    $filename = $dir.$token.'.png';
     //Parametros de Condiguración
 	  $tamaño = 10; //Tamaño de Pixel
 	  $level = 'M'; //Precisión Media
@@ -94,7 +97,7 @@
     </div>
     <div class="container">
          <div class="row">
-              <div class="col">
+              <div class="col" id="codigo">
                 <div class="card">
                       <h5 class="card-header"> <span class="icon-qrcode"></span> Codigo QR de la Compra</h5>
                       <div class="card-body">
@@ -122,9 +125,9 @@
                     <h5>Opciones</h5>
                   </div>
                   <div class="card-body">
-                         <span class="icon-print"></span>
+                         <a href="javascript:imprSelect('codigo')"><span class="icon-print"></span></a>
                          <span class="icon-attach"></span>
-                         <span class="icon-download"></span>
+                         <a href="<?php echo $filename; ?>" target="_blank"><span class="icon-download"></span></a>
                   </div>
                 </div>
               </div>
@@ -133,5 +136,15 @@
     <script src="js/jquery3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/pace.min.js"></script>
+    <script>
+           function imprSelect(codigo){
+                  var ficha=document.getElementById('codigo');
+                  var ventimp=window.open(' ','popimpr');
+                  ventimp.document.write(ficha.innerHTML);
+                  ventimp.document.close();
+                  ventimp.print();
+                  ventimp.close();
+                  }
+    </script>
   </body>
 </html>

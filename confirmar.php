@@ -82,7 +82,6 @@
      </div>
      </div>
    <?php } ?>
-
     <script src="js/jquery3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/pace.min.js"></script>

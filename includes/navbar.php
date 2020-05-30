@@ -18,15 +18,15 @@
        <div class="callapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                  <a class="nav-link" href="catalogo.php"><span class="icon-home"> Inicio</span></a>
+                  <a class="nav-link" href="index.php"><span class="icon-home"> Inicio</span></a>
                   <span class="sr-only">(current)</span>
               </li>
               <li class="nav-item active">
-                  <a class="nav-link" href="#"><span class="icon-bell-2"> Acerca de</span></a>
+                  <a class="nav-link" href="catalogo.php"><span class="icon-tags"> Catalogo</span></a>
               </li>
               <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle nav-link-active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="icon-tags"> Productos</span>
+                    <span class="icon-search"> Productos</span>
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="catalogo.php"><span class="icon-tag"> Todos los Productos</span></a>
