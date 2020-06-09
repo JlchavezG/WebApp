@@ -2,6 +2,9 @@
 // validar la sesion para restringir el acceso
 session_start();
 include 'includes/conecta.php';
+include 'includes/config.php';
+// incluimos el archivo carrito php
+include 'includes/carrito.php';
 $usuario = $_SESSION['Usuario'];
 if(!isset($usuario)){
    header("location:index.php");
@@ -59,6 +62,14 @@ $conecta->close();
   <!-- termina ventana modal -->
   <!-- inicia nuestra seccion de busqueda -->
       <div class="container">
+        <?php echo $accion; ?>
+        <?php if($alerta!= ""){ ?>
+        <div class="alert alert-success">
+          <!-- cambiamos la variable de alerta contenida en carrito.php -->
+          <?php echo $alerta; ?>
+           <a href="carrito.php" class="badge badge-success"><span class="icon-basket-3"></span> Ver Carrito</a>
+        </div>
+        <?php } ?>
         <div class="card">
            <div class="card-body col-lg-12 col-md-12 col-sm-12">
               <div class="col-md-12">
@@ -87,7 +98,6 @@ $conecta->close();
                            <th scope="col">Nombre</th>
                            <th scope="col">Descripción</th>
                            <th scope="col">Precio</th>
-                           <th scope="col">Cantidad</th>
                            <th scope="col">Imagen</th>
                            <th scope="col">Acciones</th>
                         </tr>
@@ -97,14 +107,17 @@ $conecta->close();
                      <tr>
                           <td><?php echo $row['Nombre']; ?></td>
                           <td><?php echo $row['Descripcion']; ?></td>
-                          <td>MXN <?php echo $row['Precio']; ?></td>
-                          <td>
-                             <form action="carrito.php" method="post" name="cantidad">
-                                <input type="number" name="cantidad" placeholder="selecciona el numero">
-                             </form>
-                          </td>
+                          <td>MXN <?php echo number_format($row['Precio'],2); ?></td>
                           <td><img src="img/<?php echo $row['Imagen']; ?>" class="imgcatalogo"></td>
-                          <td><button name="btn_carrito" class="btn btn-success"> + <span class="icon-basket-1"></span></button</td>
+                          <td><form name="piezas" action="" method="post">
+                            <input type="hidden" name="id" value="<?php echo openssl_encrypt($row['Id_Producto'],COD,KEY)?>">
+                            <input type="hidden" name="nombre" value="<?php echo openssl_encrypt($row['Nombre'],COD,KEY)?>">
+                            <input type="hidden" name="precio" value="<?php echo openssl_encrypt($row['Precio'],COD,KEY)?>">
+                            <input type="hidden" name="numero" value="<?php echo openssl_encrypt(1,COD,KEY)?>">
+                            <div align="right">
+                                <button type="submit" name="btn_carrito" value="Agregar" class="btn btn-success btn-sm"><span class="icon-basket"></span> Agregar al carrito</button>
+                            </div></td>
+                          </form>
                      </tr>
                    <?php } ?>
                    </tbody>
