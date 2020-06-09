@@ -61,7 +61,7 @@ $conecta->close();
           </div>
           <div class="m-5 text-center">
             <a href="modificar_perfil.php?Id_Usuario=<?php echo $user['Id_Usuario']; ?>" class="btn btn-success">Modificar</a>
-            <a href="#" class="btn btn-info">Historial</a>
+            <a href="historial.php" class="btn btn-info">Historial</a>
             <a href="javascript:imprSelect('perfil')" class="btn btn-secondary">Imprimir</a>
           </div>
         </div>

@@ -91,9 +91,10 @@
       <div class="container">
         <div class="row align-items-center text-white justify-content-end fill-viewport-80">
           <div class="col-12 basis-md-50 ">
-            <h6 class="text-white-40">What others think</h6>
-            <h3>"Packet Sniffer and Analyser is what every pentester should have at his/her disposal during a pentest."</h3>
-            <p class="text-white-70 text-uppercase">Founder: G33K 0f th3 W35t</p>
+            <h6 class="text-white-40">Como desarrollar la web app basica</h6>
+            <h3>"Puedes seguir el curso en Youtube de mi canal"</h3>
+            <p class="text-white-70 text-uppercase">Jose Luis Chavez Gomez</p>
+            <a href="https://www.youtube.com/user/stardarkGotik?sub_confirmation=1" class="nav-item"><span class="icon-youtube"></span>Youtube</a>
           </div>
         </div>
       </div>
@@ -126,15 +127,15 @@
       <div class="container fill-viewport-80">
         <div class="row">
           <div class="col-12 col-md-6 mx-auto text-center my-5">
-            <h6 class="text-black-40 text-uppercase">pricing</h6>
-            <h3 class="text-black-70">we are very affordable</h3>
+            <h6 class="text-black-40 text-uppercase">Precios</h6>
+            <h3 class="text-black-70">Verifica nuestra tabla de Precios</h3>
           </div>
         </div>
         <div class="row pb-5">
            <div class="col-12 col-md-4 px-2 my-4 text-center">
-            <h6 class="text-black-40 text-uppercase">Personal</h6>
+            <h6 class="text-black-40 text-uppercase">Basico</h6>
             <img src="http://bit.ly/2y9EpP2" class="my-4"/>
-            <p>Good enough power</p>
+            <p>Digitaliza tu cafeteria</p>
             <ul class="list-unstyled list-border-black-20 list-border-y text-left text-black-70">
             <li class="py-2"><strong>10k</strong> monthly requests</li>
             <li class="py-2"><strong>9am-5pm</strong> technical support</li>
@@ -179,9 +180,9 @@
         <div class="row align-items-center text-white-70 py-5 fill-viewport-40">
           <div class="col-12 col-md-6">
               <ul class="list-unstyled">
-                <li><h6 class="text-white">ABOUT</h6></li>
-                <li>Security threaeths has been a menace to the cyber space from malwares to ransomware an even the old fashioned viruses and worms. With Packet sniffer and analyser you dont need to worry about all thses menaces attacking your mobile decvices.
-                  <a class="text-white" href="https://twitter.com/daz_lah" target="_blank">@daz_lah</a></li>
+                <li><h6 class="text-white">Acerca de </h6></li>
+                <li>Desarrollador web / Docente de informática / CEO de IscjlchavezG / Certificación en desarrollo web / Diseñador Grafico / Yutuber de Informática.
+                  <a class="text-white" href="#" target="_blank">IscjlchavezG</a></li>
               </ul>
             </div>
             <div class="col-12 col-md-2">

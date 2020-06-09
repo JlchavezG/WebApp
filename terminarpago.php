@@ -64,6 +64,16 @@
         <span aria-hidden='true'>&times;</span>
       </button>
     </div>";
+    // mandar correo electronico de la compra a usuario
+    $destinatario = $email;
+    $asunto = "Información de su compra dentro de la webapp IscjlchavezG";
+    $contenido = "Fecha de compra : $fecha \n ";
+    $contenido.= "Total de la Compra: $total \n ";
+    $contenido.= "Token de compra: $token \n ";
+    $contenido.= "Usuario: $usuario \n ";
+    $contenido.= "Comprobante: $filename \n ";
+    // enviar el mensaje
+    mail($destinatario, $asunto, $contenido);
     unset($_SESSION['Carrito']);
    }
  }
