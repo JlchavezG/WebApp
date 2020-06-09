@@ -137,11 +137,11 @@
             <img src="http://bit.ly/2y9EpP2" class="my-4"/>
             <p>Digitaliza tu cafeteria</p>
             <ul class="list-unstyled list-border-black-20 list-border-y text-left text-black-70">
-            <li class="py-2"><strong>10k</strong> monthly requests</li>
-            <li class="py-2"><strong>9am-5pm</strong> technical support</li>
+            <li class="py-2"><strong>10mb</strong> Peso total ene la nube</li>
+            <li class="py-2"><strong>Total</strong> Soporte tecnico</li>
             <li class="py-2"><strong>Public</strong> API access</li>
             </ul>
-            <a class="btn btn-block btn-primary border-0 text-white py-3" href="#">Start</a>
+            <a class="btn btn-block btn-primary border-0 text-white py-3" href="#">Comprar</a>
             </div>
 
             <div class="col-12 col-md-4 px-2 my-4 text-center">
