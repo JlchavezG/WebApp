@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/fontello.css">
     <link rel="stylesheet" href="css/pace.css">
-    <title>Historial de Compras</title>
+    <title>Historial de Compras de usuario</title>
   </head>
   <body>
     <!-- iniciamos la barra de navegacion -->

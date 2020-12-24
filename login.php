@@ -3,7 +3,8 @@ error_reporting(0);
 include 'includes/conecta.php';
 $alerta;
 // consulta para extraer datos de carrera
-$q = "SELECT * FROM Carreras ORDER BY Id_Carrera";
+$q = "SELECT * FROM Carreras ORD
+ER BY Id_Carrera";
 $respuesta =$conecta->query($q);
 // validación de contraseña
 $pass = $_POST['pass'];
