@@ -72,7 +72,7 @@ $alerta.="<div class='alert alert-success alert-dismissible fade show' role='ale
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Login | IscjlchavezG app</title>
+    <title>Login | Uem Ingenieria app</title>
     <!-- Estilos Css3 -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/fontello.css">
@@ -88,9 +88,12 @@ $alerta.="<div class='alert alert-success alert-dismissible fade show' role='ale
                          <div class="col-md-6 mx-auto">
                               <div class="card rounded-10 rounded border-primary" id="login-form">
                                    <div class="card-header bg-primary text-light">
-                                      <h3 class="mb-0 text-center ">Login IscjlchavezG</h3>
+                                      <h3 class="mb-0 text-center ">Login Tienda Online</h3>
                                    </div>
                                    <div class="card-body">
+                                     <div class="py-2 text-center">
+                                        <img src="img/logo.png" alt="">
+                                     </div>
                                       <form class="form" name="login" action="includes/login.php" id="formLogin" method="POST" autocomplete="off">
                                       <div class="form-group">
                                         <input type="text" class="form-control form-control-lg rounded-0" name="user" placeholder="Usuario" id="user" required>

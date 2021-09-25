@@ -10,7 +10,7 @@
   <body>
     <!-- iniciamos la barra de navegacion -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark lighten-1 navbar-static-top">
-      <a class="navbar-brand" href="#">IscjlchavezG</a>
+      <a class="navbar-brand" href="#">Tienda Online</a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
          aria-expanded="false" aria-laber="Toggle navigation">
          <span class="navbar-toggler-icon"></span>

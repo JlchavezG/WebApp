@@ -60,7 +60,7 @@
             Modificar Usuario
          </div>
          <div class="card-bordy">
-            <form  action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+            <form  action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
               <div class="form-row">
                 <input type="hidden" name="id" value="<?php echo $row['Id_Usuario'];?>">
                 <div class="form-group col-md-4">
