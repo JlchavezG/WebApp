@@ -64,10 +64,10 @@
                <div class="col-lg-12">
                  <!-- colocar el formulario en hidden -->
                  <form name="piezas" action="" method="post">
-                   <input type="hidden" name="id" value="<?php echo openssl_encrypt($row['Id_Producto'],COD,KEY)?>">
-                   <input type="hidden" name="nombre" value="<?php echo openssl_encrypt($row['Nombre'],COD,KEY)?>">
-                   <input type="hidden" name="precio" value="<?php echo openssl_encrypt($row['Precio'],COD,KEY)?>">
-                   <input type="hidden" name="numero" value="<?php echo openssl_encrypt(1,COD,KEY)?>">
+                   <input type="text" name="id" value="<?php echo openssl_encrypt($row['Id_Producto'],COD,KEY)?>">
+                   <input type="text" name="nombre" value="<?php echo openssl_encrypt($row['Nombre'],COD,KEY)?>">
+                   <input type="text" name="precio" value="<?php echo openssl_encrypt($row['Precio'],COD,KEY)?>">
+                   <input type="text" name="numero" value="<?php echo openssl_encrypt(1,COD,KEY)?>">
                    <div align="right">
                        <button type="submit" name="btn_carrito" value="Agregar" class="btn btn-success"><span class="icon-basket"></span> Agregar al carrito</button>
                    </div>
