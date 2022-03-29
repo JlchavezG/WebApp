@@ -14,7 +14,7 @@ $where = " ";
 if(!empty($_POST)){
   $valor = $_POST['valor'];
    if(!empty($valor)){
-      $where = "WHERE Nombre LIKE '%$valor%'";
+      $where = "WHERE Nombre LIKE '%$valor%' OR Descripcion LIKE '%$valor%' OR Precio LIKE '%$valor%' OR Id_categoria LIKE '%$valor%'";
    }
 }
 // consulta para extrar datos de producto
